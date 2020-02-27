@@ -9,17 +9,12 @@ function solve() {
     console.log(`${this.name} cast ${spell}`);
   }
 
-  const state = {
-    name: "",
-    health: 100
-  };
-
   const fighter = (name) => {
-    return Object.assign(state, { name, stamina: 100, fight });
+    return Object.assign({ health: 100 }, { name, stamina: 100, fight });
   };
 
   const mage = (name) => {
-    return Object.assign(state, { name, mana: 100, cast });
+    return Object.assign({ health: 100 }, { name, mana: 100, cast });
   };
 
   return { mage, fighter };
