@@ -96,14 +96,44 @@ function solve() {
   };
 }
 
-let classes = solve();
-let Computer = classes.Computer;
-let Laptop = classes.Laptop;
-let Desktop = classes.Desktop;
-let Monitor = classes.Monitor;
-let Battery = classes.Battery;
-let Keyboard = classes.Keyboard;
+function mixins() {
+  function computerQualityMixin(classToExtend) {
+    function getQuality() {
+      return (this.processorSpeed + this.ram + this.hardDiskSpace) / 3;
+    }
 
-let keyboard = new Keyboard("Logitech", 70);
-let monitor = new Monitor("Benq", 28, 18);
-let desktop = new Desktop("JAR Computers", 3.3, 8, 1, keyboard, monitor);
+    function isFast() {
+      return this.processorSpeed > this.ram / 4;
+    }
+
+    function isRoomy() {
+      return this.hardDiskSpace > Math.floor(this.ram * this.processorSpeed);
+    }
+
+    classToExtend.prototype.getQuality = getQuality;
+    classToExtend.prototype.isFast = isFast;
+    classToExtend.prototype.isRoomy = isRoomy;
+  }
+
+  function styleMixin(classToExtend) {
+    function isFullSet() {
+      return (
+        this.manufacturer === this.keyboard.manufacturer &&
+        this.manufacturer === this.monitor.manufacturer
+      );
+    }
+
+    function isClassy() {
+      return (
+        this.battery.expectedLife >= 3 &&
+        (this.color === "Silver" || this.color === "Black") &&
+        this.weight < 3
+      );
+    }
+
+    classToExtend.prototype.isFullSet = isFullSet;
+    classToExtend.prototype.isClassy = isClassy;
+  }
+
+  return { computerQualityMixin, styleMixin };
+}
