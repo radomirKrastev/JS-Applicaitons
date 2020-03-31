@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/team.css" />
+    <link rel="stylesheet" type="text/css" href="css/details.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./node_modules/sammy/lib/min/sammy-0.7.6.min.js"></script>
+    <script src="./node_modules/sammy/lib/plugins/sammy.handlebars.js"></script>
+    <script type="module" src="scripts/app.js"></script>
+    <script type="module" src="scripts/myFetch.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+    <!-- <script src="./init-firebase.js"></script> -->
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyAQxlR4NTd4odYdEt4K6iZ9NwzopCSvLGE",
+        authDomain: "teams-ab49d.firebaseapp.com",
+        databaseURL: "https://teams-ab49d.firebaseio.com",
+        projectId: "teams-ab49d",
+        storageBucket: "teams-ab49d.appspot.com",
+        messagingSenderId: "195953512280",
+        appId: "1:195953512280:web:422ba14b2f56af6e7d1f2d"
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <title>Team Managers App</title>
+  </head>
+  <body>
+    <div id="infoBox" class="notification" disabled></div>
+    <div id="errorBox" class="notification" disabled></div>
+    <div id="main"></div>
+  </body>
+</html>

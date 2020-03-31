@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Students</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
 
-<body>
+  <body>
     <table id="results">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Faculty Number</th>
-                <th>Grade</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Faculty Number</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
     </table>
-    <script src="./app.js"></script>
-</body>
+    <button class="load">Load</button>
 
+    <form id="create-form">
+      <h3>FORM</h3>
+      <label>First Name</label>
+      <input type="text" id="first_name" pattern="[A-Za-z]{1,20}" required />
+      <label>Last Name</label>
+      <input type="text" id="last_name" pattern="[A-Za-z]{1,20}" required />
+      <label>Faculty Number</label>
+      <input type="text" id="faculty_number" pattern="[0-9]{1,10}" required />
+      <label>Grade</label>
+      <input type="number" id="grade" step="0.01" min="1" max="6" required />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script type="module" src="./app.js"></script>
+    <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+  </body>
 </html>
