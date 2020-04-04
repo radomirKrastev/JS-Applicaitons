@@ -1,0 +1,13 @@
+{{> navbar}}
+<div id="dashboard-holder">
+    {{#if ideas}}
+    {{#each ideas}}
+    {{> ideaCard}}
+    {{/each}}
+    {{else}}
+    <h1>No ideas yet! Be the first one :)</h1>
+    {{/if}}
+
+</div>
+
+{{> footer}}

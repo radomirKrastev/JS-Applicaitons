@@ -1,0 +1,32 @@
+{{> navbar}}
+<div class="container home some">
+    <img class="det-img" src="{{imageURL}}" />
+    <div class="desc">
+        <h2 class="display-5">{{title}}</h2>
+        <p class="infoType">Description:</p>
+        <p class="idea-description">
+            {{description}}
+        </p>
+        <p class="infoType">Likes: <large>{{likes}}</large>
+        </p>
+        <p class="infoType">Comments:</p>
+        {{#if comments}}
+        {{#each comments}}
+        {{> comment}}
+        {{/each}}
+        {{else}}
+        <ul>
+            <li class="comment">No comments yet :(</li>
+        </ul>
+        {{/if}}
+    </div>
+    {{#if isAuthor}}
+    <div class="text-center">
+        <a class="btn detb" href="#/delete/{{ideaId}}">Delete</a>
+    </div>
+    {{else}}
+    {{> commentForm}}
+    {{/if}}
+
+</div>
+{{> footer}}

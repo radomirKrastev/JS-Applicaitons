@@ -1,0 +1,22 @@
+{{> navbar}}
+<div id="notifications">
+    {{#if message}}
+    {{#if successful}}
+    {{> success}}
+    {{else}}
+    {{> error}}
+    {{/if}}
+    {{else}}
+    {{> loading}}
+    {{/if}}
+</div>
+{{> footer}}
+
+
+
+{{!-- {{> navbar}}
+<div id="notifications">
+    {{> success}}
+
+</div>
+{{> footer}} --}}
