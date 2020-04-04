@@ -1,0 +1,20 @@
+{{>navbar}}
+<div style="margin-top:3%; padding-top: 3%;" class="container">
+    <div class="row align-items-center my-5">
+        <div class="col-lg-12">
+            <img style="margin: 0 auto; display:block;" class="img-fluid rounded mb-4 mb-lg-0"
+                src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/0e/6b/a5/0e6ba522-624e-1930-9e12-66417017aef1/mza_3041354150627225333.png/600x600bb.jpg"
+                alt="" />
+        </div>
+        <div style="text-align:center;margin-top:5%;" class="col-lg-12">
+            <h1 class="font-weight-light">Does your business need support?</h1>
+
+            {{#if loggedIn}}
+            <a class="btn btn-primary" href="/create">Create your cause and seek for donors</a>
+            {{else}}
+            <a class="btn btn-primary" href="/register">Register</a>
+            {{/if}}
+        </div>
+    </div>
+</div>
+{{>footer}}
